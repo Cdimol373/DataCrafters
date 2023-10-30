@@ -9,17 +9,37 @@ public class Lista<T> {
         lista = new ArrayList<>();
     }
 
-    public void agregar(T elemento) {
-        lista.add(elemento);
+    public int numElementos() {
+        return lista.size();
     }
 
-    public void eliminar(T elemento) {
-        lista.remove(elemento);
+    public void agregar(T t) {
+        lista.add(t);
+    }
+
+    public void eliminar(T t) {
+        lista.remove(t);
+    }
+
+    public T posicion(int position) {
+        if (position >= 0 && position < lista.size()) {
+            return lista.get(position);
+        } else {
+            return null;
+        }
+    }
+
+    public void limpiar() {
+        lista.clear();
+    }
+
+    public boolean estaVacia() {
+        return lista.isEmpty();
     }
 
     public void mostrar() {
-        for (T elemento : lista) {
-            System.out.println(elemento);
+        for (T t : lista) {
+            System.out.println(t);
         }
     }
 
