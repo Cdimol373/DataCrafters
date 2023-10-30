@@ -1,10 +1,16 @@
 package Modelo;
 
-public class Cliente {
+public abstract class Cliente {
     private String nombre;
     private String domicilio;
     private String nif;
     private String email;
+
+    public abstract String tipoCliente();
+
+    public abstract float calcAnual();
+
+    public abstract float descuentoEnv();
 
     // Constructor
     public Cliente(String nombre, String domicilio, String nif, String email) {

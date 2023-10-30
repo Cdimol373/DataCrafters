@@ -70,6 +70,13 @@ public class Pedidos {
         return (precioArticulo * cantidad) + descuentoEnvio;
     }
 
+    public double precioEnvio() {
+        double gastosEnvio = articulo.getGastosEnvio();
+        float descuentoCliente = cliente.descuentoEnv();
+
+        return gastosEnvio * (1 - descuentoCliente);
+    }
+
     // Método para marcar el pedido como enviado
     public boolean pedidoEnviado() {
         this.enviado = true;
@@ -81,16 +88,6 @@ public class Pedidos {
         return this.enviado;
     }
 
-    /*public String toString() {
-        return "Pedidos{" +
-                "numeroPedido=" + numeroPedido +
-                ", cliente=" + cliente +
-                ", articulo=" + articulo +
-                ", cantidad=" + cantidad +
-                ", fechaHora=" + fechaHora +
-                '}';*/
-
-
     @Override
     public String toString() {
         double precioTotal = calcularPrecio();
@@ -98,15 +95,15 @@ public class Pedidos {
         return "Pedidos{" +
                 "numeroPedido=" + numeroPedido +
                 ", fechaHora=" + fechaHora +
-                ", Nif del cliente=" + cliente.getNif() +  // Asumiendo que tienes un getter para NIF en la clase Cliente
-                ", nombre del cliente=" + cliente.getNombre() +  // Asumiendo que tienes un getter para nombre en la clase Cliente
-                ", codigo del articulo=" + articulo.getCodigo() +  // Asumiendo que tienes un getter para código en la clase Articulos
-                ", descripcion del articulo=" + articulo.getDescripcion() +  // Asumiendo que tienes un getter para descripción en la clase Articulos
+                ", Nif del cliente=" + cliente.getNif() +
+                ", nombre del cliente=" + cliente.getNombre() +
+                ", codigo del articulo=" + articulo.getCodigo() +
+                ", descripcion del articulo=" + articulo.getDescripcion() +
                 ", cantidad=" + cantidad +
-                ", precio del articulo=" + articulo.getPrecio() +  // Asumiendo que tienes un getter para precio en la clase Articulos
+                ", precio del articulo=" + articulo.getPrecio() +
                 ", coste de envio=" + costeEnvio +
                 ", precio total=" + precioTotal +
-                ", enviado=" + (enviado ? "Si" : "No") +  // Mostrará "Si" si enviado es true, "No" en caso contrario
+                ", enviado=" + (enviado ? "Si" : "No") +
                 '}';
     }
 

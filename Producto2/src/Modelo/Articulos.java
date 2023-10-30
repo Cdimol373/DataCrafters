@@ -87,13 +87,4 @@ public class Articulos {
                 ", gastosEnvio=" + gastosEnvio +
                 '}';
     }
-
-    public static void main(String[] args) {
-        // Añadir algunos artículos de ejemplo
-        anadirArticulos(new Articulos("001", "Lápiz", 1.2, 2, 0.5));
-        anadirArticulos(new Articulos("002", "Cuaderno", 4.5, 3, 0.7));
-
-        // Mostrar todos los artículos
-        mostrarArticulos();
-    }
 }

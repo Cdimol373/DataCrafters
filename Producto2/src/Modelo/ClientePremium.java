@@ -2,10 +2,25 @@ package Modelo;
 
 public class ClientePremium extends Cliente {
     private double cuotaAnual;
-    private double dtoGastosEnvio;  // Este podría ser un valor como 0.1 para un 10% de descuento
+    private double dtoGastosEnvio;
 
     public ClientePremium(String nombre, String domicilio, String nif, String email) {
         super(nombre, domicilio, nif, email);
+    }
+
+    @Override
+    public String tipoCliente() {
+        return "Premium";
+    }
+
+    @Override
+    public float calcAnual() {
+        return (float) cuotaAnual;
+    }
+
+    @Override
+    public float descuentoEnv() {
+        return (float) dtoGastosEnvio;
     }
 
     // Getters y setters

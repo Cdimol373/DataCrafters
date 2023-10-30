@@ -8,6 +8,21 @@ public class ClienteEstandar extends Cliente {
     }
 
     @Override
+    public String tipoCliente() {
+        return "Estandar";
+    }
+
+    @Override
+    public float calcAnual() {
+        return 0;
+    }
+
+    @Override
+    public float descuentoEnv() {
+        return 0;
+    }
+
+    @Override
     public double calcularDtoGastosEnvio(double gastosEnvioOriginales) {
         // Sin descuento para clientes estándar
         return gastosEnvioOriginales;
