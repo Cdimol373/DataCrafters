@@ -1,15 +1,25 @@
 package Modelo;
 
-public class ListaPedidos extends Lista<Pedidos> {
+public class ListaPedidos extends Lista<Pedido> {
 
     // Constructor
     public ListaPedidos() {
         super();
     }
 
+    // Método para agregar un pedido
+    public void agregarPedido(Pedido pedido){
+        this.agregar(pedido);
+    }
+
+    // Método para ver todos los pedidos
+    public void verPedidos(Pedido pedido){
+        this.mostrar();
+    }
+
     // Método para buscar un pedido por su número de pedido
-    public Pedidos buscarPorNumeroPedido(int numeroPedido) {
-        for (Pedidos pedido : lista) {
+    public Pedido buscarPorNumeroPedido(int numeroPedido) {
+        for (Pedido pedido : lista) {
             if (pedido.getNumeroPedido() == numeroPedido) {
                 return pedido;
             }
@@ -19,7 +29,7 @@ public class ListaPedidos extends Lista<Pedidos> {
 
     // Método para mostrar todos los pedidos de un cliente específico
     public void mostrarPedidosCliente(String nifCliente) {
-        for (Pedidos pedido : lista) {
+        for (Pedido pedido : lista) {
             if (pedido.getCliente().getNif().equals(nifCliente)) {
                 System.out.println(pedido);
             }

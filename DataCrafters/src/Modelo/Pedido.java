@@ -2,16 +2,16 @@ package Modelo;
 
 import java.time.LocalDateTime;
 
-public class Pedidos {
+public class Pedido {
     private int numeroPedido;
     private Cliente cliente;
-    private Articulos articulo;
+    private Articulo articulo;
     private int cantidad;
     private LocalDateTime fechaHora;
     private boolean enviado;
 
     // Constructor
-    public Pedidos(int numeroPedido, Cliente cliente, Articulos articulo, int cantidad, LocalDateTime fechaHora, boolean enviado) {
+    public Pedido(int numeroPedido, Cliente cliente, Articulo articulo, int cantidad, LocalDateTime fechaHora, boolean enviado) {
         this.numeroPedido = numeroPedido;
         this.cliente = cliente;
         this.articulo = articulo;
@@ -37,11 +37,11 @@ public class Pedidos {
         this.cliente = cliente;
     }
 
-    public Articulos getArticulo() {
+    public Articulo getArticulo() {
         return articulo;
     }
 
-    public void setArticulo(Articulos articulo) {
+    public void setArticulo(Articulo articulo) {
         this.articulo = articulo;
     }
 
@@ -92,7 +92,7 @@ public class Pedidos {
     public String toString() {
         double precioTotal = calcularPrecio();
         double costeEnvio = articulo.getGastosEnvio();
-        return "Pedidos{" +
+        return "Pedido{" +
                 "numeroPedido=" + numeroPedido +
                 ", fechaHora=" + fechaHora +
                 ", Nif del cliente=" + cliente.getNif() +

@@ -1,20 +1,16 @@
 package Modelo;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Articulos {
+public class Articulo {
     private String codigo;
     private String descripcion;
     private double precio;
     private int tiempoPreparacion;
     private double gastosEnvio;
 
-    // Lista estática para almacenar todos los artículos
-    private static List<Articulos> listaArticulos = new ArrayList<>();
+    private ListaArticulos listaArticulos = new ListaArticulos();
 
     // Constructor
-    public Articulos(String codigo, String descripcion, double precio, int tiempoPreparacion, double gastosEnvio) {
+    public Articulo(String codigo, String descripcion, double precio, int tiempoPreparacion, double gastosEnvio) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precio = precio;
@@ -23,8 +19,6 @@ public class Articulos {
     }
 
     // Getters y Setters
-
-
     public String getCodigo() {
         return codigo;
     }
@@ -65,26 +59,14 @@ public class Articulos {
         this.gastosEnvio = gastosEnvio;
     }
 
-    // Método para añadir artículos
-    public static void anadirArticulos(Articulos articulo) {
-        listaArticulos.add(articulo);
-    }
-
-    // Método para mostrar todos los artículos
-    public static void mostrarArticulos() {
-        for (Articulos articulo : listaArticulos) {
-            System.out.println(articulo);
-        }
-    }
 
     @Override
     public String toString() {
-        return "Articulos{" +
-                "codigo='" + codigo + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", precio=" + precio +
-                ", tiempoPreparacion=" + tiempoPreparacion +
-                ", gastosEnvio=" + gastosEnvio +
-                '}';
+        return "Articulo - " +
+                "codigo - '" + codigo + '\'' +
+                ", descripcion - '" + descripcion + '\'' +
+                ", precio - " + precio +
+                ", tiempoPreparacion - " + tiempoPreparacion +
+                ", gastosEnvio - " + gastosEnvio;
     }
 }
