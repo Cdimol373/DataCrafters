@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b64dc8d4-b8cf-4a20-bc5e-0f303dc080b4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Tests/Controlador/ControladorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/Modelo/ClientePremiumTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataCrafters.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DataCrafters.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataCrafters/src/Vista/GestionOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCrafters/src/Vista/GestionOS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +49,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Errors"
+    "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -63,7 +61,7 @@
       <recent name="Controlador" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in DataCrafters">
+  <component name="RunManager" selected="Application.OnlineStore">
     <configuration name="OnlineStore" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Vista.OnlineStore" />
       <module name="DataCrafters" />
@@ -102,9 +100,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OnlineStore" />
         <item itemvalue="JUnit.All in DataCrafters" />
         <item itemvalue="JUnit.ClientePremiumTest" />
-        <item itemvalue="Application.OnlineStore" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698769741543</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="upgrades + tests JUnit">
+      <created>1698774425090</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698774425090</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -167,9 +172,13 @@
     <MESSAGE value="Menu iniciado + clases terminadas" />
     <MESSAGE value="updates" />
     <MESSAGE value="metodos al controlador" />
-    <option name="LAST_COMMIT_MESSAGE" value="metodos al controlador" />
+    <MESSAGE value="upgrades + tests JUnit" />
+    <option name="LAST_COMMIT_MESSAGE" value="upgrades + tests JUnit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DataCrafters$All_in_DataCrafters.ic" NAME="All in DataCrafters Coverage Results" MODIFIED="1698773939640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/DataCrafters$All_in_DataCrafters.ic" NAME="All in DataCrafters Coverage Results" MODIFIED="1698774362512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/DataCrafters$ClientePremiumTest.ic" NAME="ClientePremiumTest Coverage Results" MODIFIED="1698774344879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Modelo.*</FILTER>
+    </SUITE>
   </component>
 </project>

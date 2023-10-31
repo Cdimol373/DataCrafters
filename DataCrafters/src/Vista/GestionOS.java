@@ -2,7 +2,8 @@ package Vista;
 
 import Controlador.Controlador;
 import Modelo.*;
-
+import java.util.InputMismatchException;
+import java.time.format.DateTimeParseException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -79,16 +80,20 @@ public class GestionOS {
                     controlador.mostrarArticulos();
                     break;
                 case '3':
-                    System.out.println("Introduce el código del artículo que quieres buscar:");
-                    codigo = teclado.nextLine();
-                    Articulo articuloEncontrado = controlador.buscarPorCodigo(codigo);
+                    Articulo articuloEncontrado = null;
+                    while (articuloEncontrado == null) {
+                        System.out.println("Introduce el código del artículo que quieres buscar:");
+                        codigo = teclado.nextLine();
+                        articuloEncontrado = controlador.buscarPorCodigo(codigo);
 
-                    if (articuloEncontrado != null) {
-                        System.out.println(articuloEncontrado);
-                    } else {
-                        System.out.println("El articulo " + codigo + " no existe.");
+                        if (articuloEncontrado == null) {
+                            System.out.println("El articulo " + codigo + " no existe. Ingresa otro código.");
+                        } else {
+                            System.out.println(articuloEncontrado);
+                        }
                     }
                     break;
+
                 case '0':
                     salir = true;
             }
@@ -163,27 +168,51 @@ public class GestionOS {
                 case '1':
                     System.out.println("Introduce el número del pedido");
                     int numeroPedido = Integer.parseInt(teclado.nextLine());
+
+                    boolean nifValido = false;
+                    Cliente clienteEncontrado = null;
+                    while (!nifValido){
                     System.out.println("Introduce el nif del cliente que hace el pedido");
                     String nif = teclado.nextLine();
-                    Cliente clienteEncontrado = controlador.buscarPorNIF(nif);
+                    clienteEncontrado = controlador.buscarPorNIF(nif);
                     if (clienteEncontrado == null) {
-                        System.out.println("El cliente con el nif " + nif + " no existe.");
-                        return;
+                        System.out.println("El cliente con el nif " + nif + " no existe. Ingresa un nif válido.");
+                    }else {
+                        nifValido = true;
                     }
-                    System.out.println("Introduce el articulo");
-                    String codigo = teclado.nextLine();
-                    Articulo articuloEncontrado = controlador.buscarPorCodigo(codigo);
+                    }
 
-                    if (articuloEncontrado != null) {
-                        System.out.println(articuloEncontrado);
-                    } else {
+                    boolean codigoValido = false;
+                    Articulo articuloEncontrado = null;
+                    while (!codigoValido){
+                    System.out.println("Introduce el codigo del articulo");
+                    String codigo = teclado.nextLine();
+                    articuloEncontrado = controlador.buscarPorCodigo(codigo);
+                    if (articuloEncontrado == null) {
                         System.out.println("El articulo con el código " + codigo + " no existe.");
+                    } else {
+                        codigoValido = true;
                     }
+                    }
+
                     System.out.println("Introduce la cantidad");
                     int cantidad = Integer.parseInt(teclado.nextLine());
-                    System.out.println("Introduce la fecha del pedido (formato: yyyy-MM-dd HH:mm):");
-                    String fechaHoraStr = teclado.nextLine();
-                    LocalDateTime fechaHora = LocalDateTime.parse(fechaHoraStr, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+
+                    boolean fechaValida = false;
+                    LocalDateTime fechaHora = null;
+                    while (!fechaValida) {
+                        try {
+                            System.out.println("Introduce la fecha del pedido (formato: yyyy-MM-dd HH:mm):");
+                            String fechaHoraStr = teclado.nextLine();
+                            fechaHora = LocalDateTime.parse(fechaHoraStr, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+                            fechaValida = true;
+                        } catch (DateTimeParseException e) {
+                            System.out.println("Fecha no válida. Por favor, ingrese la fecha en el formato correcto (yyyy-MM-dd HH:mm).");
+                        } catch (Exception e) {
+                            System.out.println("Ocurrió un error: " + e.getMessage());
+                        }
+                    }
+
                     boolean enviado =false;
                     controlador.crearPedido(numeroPedido, clienteEncontrado, articuloEncontrado, cantidad, fechaHora,enviado);
                     break;
