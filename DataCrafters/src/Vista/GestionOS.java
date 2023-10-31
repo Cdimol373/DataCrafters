@@ -86,7 +86,15 @@ public class GestionOS {
                     listaArticulos.mostrarArticulos();
                     break;
                 case '3':
+                    System.out.println("Introduce el código del artículo que quieres buscar:");
+                    codigo = teclado.nextLine();
+                    Articulo articuloEncontrado = listaArticulos.buscarPorCodigo(codigo);
 
+                    if (articuloEncontrado != null) {
+                        System.out.println(articuloEncontrado);
+                    } else {
+                        System.out.println("El articulo " + codigo + " no existe.");
+                    }
                     break;
                 case '0':
                     salir = true;

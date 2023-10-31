@@ -92,19 +92,17 @@ public class Pedido {
     public String toString() {
         double precioTotal = calcularPrecio();
         double costeEnvio = articulo.getGastosEnvio();
-        return "Pedido{" +
-                "numeroPedido=" + numeroPedido +
-                ", fechaHora=" + fechaHora +
-                ", Nif del cliente=" + cliente.getNif() +
-                ", nombre del cliente=" + cliente.getNombre() +
-                ", codigo del articulo=" + articulo.getCodigo() +
-                ", descripcion del articulo=" + articulo.getDescripcion() +
-                ", cantidad=" + cantidad +
-                ", precio del articulo=" + articulo.getPrecio() +
-                ", coste de envio=" + costeEnvio +
-                ", precio total=" + precioTotal +
-                ", enviado=" + (enviado ? "Si" : "No") +
-                '}';
+        return "Numero del pedido - " + numeroPedido +
+                ", Fecha - " + fechaHora +
+                ", Nif del cliente - " + cliente.getNif() +
+                ", Nombre del cliente - " + cliente.getNombre() +
+                ", Codigo del articulo - " + articulo.getCodigo() +
+                ", Descripcion del articulo - " + articulo.getDescripcion() +
+                ", Cantidad - " + cantidad +
+                ", Precio del articulo - " + articulo.getPrecio() +
+                ", Coste de envio - " + costeEnvio +
+                ", Precio total - " + precioTotal +
+                ", Enviado? - " + (enviado ? "Si" : "No");
     }
 
 }
