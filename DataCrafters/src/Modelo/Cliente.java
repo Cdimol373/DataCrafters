@@ -61,11 +61,10 @@ public abstract class Cliente {
     // toString para ver el objeto Cliente
     @Override
     public String toString() {
-        return "Cliente{" +
-                "nombre='" + nombre + '\'' +
-                ", domicilio='" + domicilio + '\'' +
-                ", nif='" + nif + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Nombre - " + nombre +
+                ", Domicilio - " + domicilio +
+                ", Nif - " + nif +
+                ", Email - " + email +
+                ", Tipo de cliente - " + tipoCliente();
     }
 }

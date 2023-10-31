@@ -1,10 +1,8 @@
 package Vista;
 
 import Controlador.Controlador;
-import Modelo.Articulo;
-import Modelo.ListaArticulos;
-import Modelo.ListaClientes;
-import Modelo.ListaPedidos;
+import Modelo.*;
+
 import java.util.Scanner;
 public class GestionOS {
     private Controlador controlador;
@@ -107,15 +105,36 @@ public class GestionOS {
             System.out.println("Que desea hacer?");
             System.out.println("1. Añadir un cliente");
             System.out.println("2. Mostrar los clientes");
-            System.out.println("3. Buscar clientes");
+            System.out.println("3. Buscar un cliente");
             System.out.println("0. Atras");
             opcio = pedirOpcion();
             switch (opcio) {
                 case '1':
+                    System.out.println("Que tipo de cliente se va a registrar? Pulsa S para estándar o P para premium");
+                    String tipoCliente = teclado.nextLine();
+                    System.out.println("Introduce el nombre del cliente");
+                    String nombre = teclado.nextLine();
+                    System.out.println("Introduce el domicilio del cliente");
+                    String domicilio = teclado.nextLine();
+                    System.out.println("Introduce el nif del cliente");
+                    String nif = (teclado.nextLine());
+                    System.out.println("Introduce el email del cliente");
+                    String email = (teclado.nextLine());
 
+                    Cliente cliente;
+
+                    if(tipoCliente.equalsIgnoreCase("S")){
+                        cliente = new ClienteEstandar(nombre,domicilio,nif,email);
+                    }else if (tipoCliente.equalsIgnoreCase("P")){
+                        cliente = new ClientePremium(nombre,domicilio,nif,email);
+                    } else {
+                        System.out.println("Este tipo de cliente no es válido.");
+                        return;
+                    }
+                    listaClientes.agregarCliente(cliente);
                     break;
                 case '2':
-
+                    listaClientes.mostrarClientes();
                     break;
                 case '3':
 

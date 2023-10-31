@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b64dc8d4-b8cf-4a20-bc5e-0f303dc080b4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataCrafters/src/Modelo/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCrafters/src/Modelo/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataCrafters/src/Modelo/ClienteEstandar.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCrafters/src/Modelo/ClienteEstandar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataCrafters/src/Modelo/ListaClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCrafters/src/Modelo/ListaClientes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataCrafters/src/Vista/GestionOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCrafters/src/Vista/GestionOS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +42,26 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="OnlineStore" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Vista.OnlineStore" />
+      <module name="DataCrafters" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Vista.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.OnlineStore" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -69,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698741414266</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="updates">
+      <created>1698746918133</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698746918133</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

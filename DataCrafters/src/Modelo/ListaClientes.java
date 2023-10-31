@@ -13,7 +13,7 @@ public class ListaClientes extends Lista<Cliente> {
     }
 
     // Método para mostrar clientes
-    public void mostrarClientes(Cliente cliente){
+    public void mostrarClientes(){
         this.mostrar();
     }
 
