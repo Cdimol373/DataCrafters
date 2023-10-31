@@ -28,7 +28,7 @@ public class ListaPedidos extends Lista<Pedido> {
     }
 
     // Método para mostrar todos los pedidos de un cliente específico
-    public void mostrarPedidosCliente(String nifCliente) {
+    public void buscarPedidosCliente(String nifCliente) {
         for (Pedido pedido : lista) {
             if (pedido.getCliente().getNif().equals(nifCliente)) {
                 System.out.println(pedido);

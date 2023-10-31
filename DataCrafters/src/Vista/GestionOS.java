@@ -2,7 +2,6 @@ package Vista;
 
 import Controlador.Controlador;
 import Modelo.*;
-import java.util.InputMismatchException;
 import java.time.format.DateTimeParseException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -160,8 +159,7 @@ public class GestionOS {
             System.out.println("Que desea hacer?");
             System.out.println("1. Añadir un pedido");
             System.out.println("2. Mostrar los pedidos");
-            System.out.println("3. Buscar pedidos por cliente");
-            System.out.println("4. Buscar pedidos por numero de pedido");
+            System.out.println("3. Buscar pedidos por numero de pedido");
             System.out.println("0. Atras");
             opcio = pedirOpcion();
             switch (opcio) {
@@ -189,7 +187,7 @@ public class GestionOS {
                     String codigo = teclado.nextLine();
                     articuloEncontrado = controlador.buscarPorCodigo(codigo);
                     if (articuloEncontrado == null) {
-                        System.out.println("El articulo con el código " + codigo + " no existe.");
+                        System.out.println("El articulo con el código " + codigo + " no existe. Ingresa otro código.");
                     } else {
                         codigoValido = true;
                     }
@@ -202,12 +200,12 @@ public class GestionOS {
                     LocalDateTime fechaHora = null;
                     while (!fechaValida) {
                         try {
-                            System.out.println("Introduce la fecha del pedido (formato: yyyy-MM-dd HH:mm):");
+                            System.out.println("Introduce la fecha del pedido (formato: dd-MM-yyyy HH:mm):");
                             String fechaHoraStr = teclado.nextLine();
-                            fechaHora = LocalDateTime.parse(fechaHoraStr, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+                            fechaHora = LocalDateTime.parse(fechaHoraStr, DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"));
                             fechaValida = true;
                         } catch (DateTimeParseException e) {
-                            System.out.println("Fecha no válida. Por favor, ingrese la fecha en el formato correcto (yyyy-MM-dd HH:mm).");
+                            System.out.println("Fecha no válida. Por favor, ingrese la fecha en el formato correcto (dd-MM-yyyy HH:mm).");
                         } catch (Exception e) {
                             System.out.println("Ocurrió un error: " + e.getMessage());
                         }
@@ -222,11 +220,18 @@ public class GestionOS {
                     break;
 
                 case '3':
+                    Pedido pedidoEncontrado = null;
+                    while (pedidoEncontrado == null) {
+                        System.out.println("Introduce el número del pedido deseado:");
+                        numeroPedido = Integer.parseInt(teclado.nextLine());
+                        pedidoEncontrado = controlador.mostrarPorNumero(numeroPedido);
 
-                    break;
-
-                case '4':
-
+                        if (pedidoEncontrado == null) {
+                            System.out.println("El pedido " + numeroPedido + " no existe. Ingresa otro número.");
+                        } else {
+                            System.out.println(pedidoEncontrado);
+                        }
+                    }
                     break;
 
                 case '0':

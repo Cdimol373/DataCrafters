@@ -44,4 +44,8 @@ public class Controlador {
     public void mostrarPedidos() {
         datos.getListaPedidos().mostrar();
     }
+
+    public Pedido mostrarPorNumero(int numeroPedido) {
+        return datos.getListaPedidos().buscarPorNumeroPedido(numeroPedido);
+    }
 }
