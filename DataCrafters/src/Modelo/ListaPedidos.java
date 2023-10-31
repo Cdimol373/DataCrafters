@@ -24,7 +24,7 @@ public class ListaPedidos extends Lista<Pedido> {
                 return pedido;
             }
         }
-        return null;  // Si no se encuentra el pedido
+        return null;
     }
 
     // Método para mostrar todos los pedidos de un cliente específico

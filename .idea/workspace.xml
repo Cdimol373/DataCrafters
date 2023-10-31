@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b64dc8d4-b8cf-4a20-bc5e-0f303dc080b4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataCrafters/src/Modelo/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCrafters/src/Modelo/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataCrafters/src/Modelo/ClienteEstandar.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCrafters/src/Modelo/ClienteEstandar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataCrafters/src/Modelo/ListaClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCrafters/src/Modelo/ListaClientes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataCrafters/src/Controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCrafters/src/Controlador/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataCrafters/src/Modelo/Datos.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCrafters/src/Modelo/Datos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataCrafters/src/Modelo/ListaPedidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCrafters/src/Modelo/ListaPedidos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataCrafters/src/Vista/GestionOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataCrafters/src/Vista/GestionOS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698746918133</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="updates">
+      <created>1698751698528</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698751698528</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -3,16 +3,13 @@ package Vista;
 import Controlador.Controlador;
 import Modelo.*;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 public class GestionOS {
     private Controlador controlador;
     Scanner teclado = new Scanner(System.in);
 
-    ListaArticulos listaArticulos = new ListaArticulos();
-
-    ListaClientes listaClientes = new ListaClientes();
-
-    ListaPedidos listaPedidos = new ListaPedidos();
     public GestionOS() {
         controlador = new Controlador();
     }
@@ -76,16 +73,15 @@ public class GestionOS {
                     int tiempoPreparacion = Integer.parseInt(teclado.nextLine());
                     System.out.println("Introduce los gastos de envio del articulo");
                     double gastosEnvio = Double.parseDouble(teclado.nextLine());
-                    Articulo articulo = new Articulo(codigo, descripcion, precio, tiempoPreparacion, gastosEnvio);
-                    listaArticulos.agregarArticulos(articulo);
+                    controlador.crearArticulo(codigo, descripcion, precio, tiempoPreparacion, gastosEnvio);
                     break;
                 case '2':
-                    listaArticulos.mostrarArticulos();
+                    controlador.mostrarArticulos();
                     break;
                 case '3':
                     System.out.println("Introduce el código del artículo que quieres buscar:");
                     codigo = teclado.nextLine();
-                    Articulo articuloEncontrado = listaArticulos.buscarPorCodigo(codigo);
+                    Articulo articuloEncontrado = controlador.buscarPorCodigo(codigo);
 
                     if (articuloEncontrado != null) {
                         System.out.println(articuloEncontrado);
@@ -131,13 +127,21 @@ public class GestionOS {
                         System.out.println("Este tipo de cliente no es válido.");
                         return;
                     }
-                    listaClientes.agregarCliente(cliente);
+                    controlador.crearCliente(cliente);
                     break;
                 case '2':
-                    listaClientes.mostrarClientes();
+                    controlador.mostrarClientes();
                     break;
                 case '3':
+                    System.out.println("Introduce el nif del cliente que quieres buscar:");
+                    nif = teclado.nextLine();
+                    Cliente clienteEncontrado = controlador.buscarPorNIF(nif);
 
+                    if (clienteEncontrado != null) {
+                        System.out.println(clienteEncontrado);
+                    } else {
+                        System.out.println("El cliente con el nif " + nif + " no existe.");
+                    }
                     break;
                 case '0':
                     salir = true;
@@ -151,19 +155,48 @@ public class GestionOS {
             System.out.println("Que desea hacer?");
             System.out.println("1. Añadir un pedido");
             System.out.println("2. Mostrar los pedidos");
-            System.out.println("3. Buscar pedidos");
+            System.out.println("3. Buscar pedidos por cliente");
+            System.out.println("4. Buscar pedidos por numero de pedido");
             System.out.println("0. Atras");
             opcio = pedirOpcion();
             switch (opcio) {
                 case '1':
+                    System.out.println("Introduce el número del pedido");
+                    int numeroPedido = Integer.parseInt(teclado.nextLine());
+                    System.out.println("Introduce el nif del cliente que hace el pedido");
+                    String nif = teclado.nextLine();
+                    Cliente clienteEncontrado = controlador.buscarPorNIF(nif);
+                    if (clienteEncontrado == null) {
+                        System.out.println("El cliente con el nif " + nif + " no existe.");
+                        return;
+                    }
+                    System.out.println("Introduce el articulo");
+                    String codigo = teclado.nextLine();
+                    Articulo articuloEncontrado = controlador.buscarPorCodigo(codigo);
 
+                    if (articuloEncontrado != null) {
+                        System.out.println(articuloEncontrado);
+                    } else {
+                        System.out.println("El articulo con el código " + codigo + " no existe.");
+                    }
+                    System.out.println("Introduce la cantidad");
+                    int cantidad = Integer.parseInt(teclado.nextLine());
+                    System.out.println("Introduce la fecha del pedido (formato: yyyy-MM-dd HH:mm):");
+                    String fechaHoraStr = teclado.nextLine();
+                    LocalDateTime fechaHora = LocalDateTime.parse(fechaHoraStr, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+                    boolean enviado =false;
+                    controlador.crearPedido(numeroPedido, clienteEncontrado, articuloEncontrado, cantidad, fechaHora,enviado);
                     break;
 
                 case '2':
-
+                    controlador.mostrarPedidos();
                     break;
 
                 case '3':
+
+                    break;
+
+                case '4':
 
                     break;
 
