@@ -5,7 +5,6 @@ import Modelo.Articulo;
 import Modelo.ListaArticulos;
 import Modelo.ListaClientes;
 import Modelo.ListaPedidos;
-
 import java.util.Scanner;
 public class GestionOS {
     private Controlador controlador;
