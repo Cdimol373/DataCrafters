@@ -7,6 +7,7 @@ public class Articulo {
     private double precioVenta;
     private double tiempoPreparacion;
     private double gastosEnvio;
+    private ListaArticulos listaArticulos = new ListaArticulos();
 
     public Articulo(String codigo, String descripcion, double precioVenta, double tiempoPreparacion, double gastosEnvio) {
 
@@ -17,7 +18,7 @@ public class Articulo {
         this.gastosEnvio = gastosEnvio;
     }
 
-    public String getCodigo() {
+    public  String getCodigo() {
         return codigo;
     }
 
@@ -64,6 +65,18 @@ public class Articulo {
        + "\n Precio: " + precioVenta
        +"\n Tiempo de preparación: " + tiempoPreparacion
                +"\nGastos de envio: ";
+
+   }
+   @Override
+
+    public boolean equals(Object o){
+        Articulo articulo = (Articulo) o;
+        return
+        this.codigo.equalsIgnoreCase(articulo.codigo)&&
+                this.descripcion.equalsIgnoreCase(articulo.descripcion)&&
+                this.precioVenta == articulo.precioVenta &&
+                this.tiempoPreparacion == articulo.tiempoPreparacion &&
+                this.gastosEnvio == articulo.gastosEnvio;
    }
 
 

@@ -5,12 +5,12 @@ public class ListaPedidos extends Lista<Pedido> {
         super();
     }
 
-    public boolean buscarPedidos(int numeroPedido){
+    public Pedido buscarPedidos(int numeroPedido){
         for (Pedido pedido: lista) {
             if (pedido.getNumeroPedido() == numeroPedido)
-                return true;
+                return pedido;
         }
-        return false;
+        return null;
     }
 
 }

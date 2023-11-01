@@ -5,13 +5,14 @@ public class ListaClientes extends Lista<Cliente>{
         super();
     }
 
-    public boolean buscarCliente(String nif){
+    public Cliente buscarCliente(String nif){
         for (Cliente cliente: lista) {
             if (cliente.getNif().equalsIgnoreCase(nif))
-                return true;
+                return cliente;
         }
-        return false;
+        return null;
 }
+
 
 
     public void eliminarCliente(Cliente cliente) throws Excepciones {
@@ -19,5 +20,15 @@ public class ListaClientes extends Lista<Cliente>{
             throw new Excepciones(Excepciones.EXCEPCION_REMOVECLIENTE);
         }
 
+    }
+
+
+
+    // Método para añadir clientes
+    public void agregarCliente (Cliente cliente){
+        this.agregarCliente(cliente);
+    }
+    public void mostrarCliente(){
+        this.mostrar();
     }
 }

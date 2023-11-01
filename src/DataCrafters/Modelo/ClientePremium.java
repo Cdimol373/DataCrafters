@@ -12,6 +12,7 @@ public class ClientePremium extends Cliente{
 
     public ClientePremium(String nombre, String domicilio, String nif, String email) {
         super(nombre, domicilio, nif, email);
+
     }
 
 
@@ -42,7 +43,7 @@ public class ClientePremium extends Cliente{
     }
 
     public double calcularDtoGastosEnvio(double gastosEnvioOriginales) {
-        // Aplicar el descuento
+
         return gastosEnvioOriginales * (1 - descuentoEnvio);
 }
     }
